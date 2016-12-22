@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using SpeedTest.Properties;
 using Microsoft.Win32;
@@ -532,11 +533,16 @@ namespace SpeedTest
             string status = "-";
             StatusCode newStatus = StatusCode.Online;
             int imageIndex = 0;
+            // Regex to match IP address
+            Regex regex = new Regex(@"(?:[0-9]{1,3}\.){3}[0-9]{1,3}");
 
-            if (e.Error == null) // String downloaded successfully
+            if (e.Error == null && regex.IsMatch(e.Result)) // String downloaded successfully and contains IP address
             {
+                // Get the first instance of an IP in the result using regex
+                Match match = regex.Match(e.Result);
+
                 // Remove line breaks from the IP address
-                ip = e.Result.Replace("\r", "").Replace("\n", "");
+                ip = match.Value;
 
                 StatusMain.Text = "Testing speed at: " + Global.ConvertTime(DateTime.Now);
 
@@ -649,12 +655,21 @@ namespace SpeedTest
 
             if (Global.IsOnline)
             {
+                string api = string.Empty;
+                if (Settings.Default.AutoIPDetect)
+                {
+                    api = "http://icanhazip.com";
+                }
+                else
+                {
+                    api = Settings.Default.IPDetectURL;
+                }
                 // Create a new WebClient object and download the string
                 CustomWebClient webClient = new CustomWebClient();
                 webClient.DownloadDataCompleted += webClient_DownloadDataCompleted;
                 webClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
                 webClient.DownloadStringCompleted += webClient_DownloadStringCompleted;
-                webClient.DownloadStringAsync(new Uri("http://icanhazip.com/"));
+                webClient.DownloadStringAsync(new Uri(api));
             }
             else
             {

@@ -27,6 +27,10 @@ namespace SpeedTest
             RadioCustomDownload.Checked = !Settings.Default.AutoDownload;
             TextDownloadURL.Text = Settings.Default.DownloadURL;
 
+            RadioAutoDetectIP.Checked = Settings.Default.AutoIPDetect;
+            RadioCustomIPDetect.Checked = !Settings.Default.AutoIPDetect;
+            TextIPDetectURL.Text = Settings.Default.IPDetectURL;
+
             RadioISOFormat.Checked = Settings.Default.TimeFormat == 0;
             RadioEUFormat.Checked = Settings.Default.TimeFormat == 1;
             RadioUSFormat.Checked = Settings.Default.TimeFormat == 2;
@@ -38,6 +42,7 @@ namespace SpeedTest
             CheckAutoStart.Checked = Settings.Default.AutoStart;
             CheckMinimize.Checked = Settings.Default.Minimize;
 
+            TextIPDetectURL.Enabled = !RadioAutoDetectIP.Checked;
             TextDownloadURL.Enabled = !RadioAutoDownload.Checked;
         }
         #endregion
@@ -48,6 +53,9 @@ namespace SpeedTest
             // Update configuration settings
             Settings.Default.AutoDownload = RadioAutoDownload.Checked;
             Settings.Default.DownloadURL = TextDownloadURL.Text;
+
+            Settings.Default.AutoIPDetect = RadioAutoDetectIP.Checked;
+            Settings.Default.IPDetectURL = TextIPDetectURL.Text;
 
             if (RadioISOFormat.Checked) Settings.Default.TimeFormat = 0;
             else if (RadioEUFormat.Checked) Settings.Default.TimeFormat = 1;
@@ -68,6 +76,12 @@ namespace SpeedTest
         private void RadioAutoDownload_CheckedChanged(object sender, EventArgs e)
         {
             TextDownloadURL.Enabled = !RadioAutoDownload.Checked;
+        }
+
+        /// <summary>Occurs when the IP API radio button Checked property changes.</summary>
+        private void RadioAutoDetectIP_CheckedChanged(object sender, EventArgs e)
+        {
+            TextIPDetectURL.Enabled = !RadioAutoDetectIP.Checked;
         }
 
         /// <summary>Occurs when the Log File button is clicked.</summary>

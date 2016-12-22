@@ -50,9 +50,14 @@
             this.RadioBytesPerSecond = new System.Windows.Forms.RadioButton();
             this.RadioBitsPerSecond = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.GroupAPIURL = new System.Windows.Forms.GroupBox();
+            this.TextIPDetectURL = new System.Windows.Forms.TextBox();
+            this.RadioCustomIPDetect = new System.Windows.Forms.RadioButton();
+            this.RadioAutoDetectIP = new System.Windows.Forms.RadioButton();
             this.GroupTimeFormat.SuspendLayout();
             this.GroupDownloadURL.SuspendLayout();
             this.GroupSpeedUnits.SuspendLayout();
+            this.GroupAPIURL.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextLogFile
@@ -60,7 +65,7 @@
             this.TextLogFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextLogFile.BackColor = System.Drawing.SystemColors.Window;
-            this.TextLogFile.Location = new System.Drawing.Point(110, 292);
+            this.TextLogFile.Location = new System.Drawing.Point(110, 372);
             this.TextLogFile.Name = "TextLogFile";
             this.TextLogFile.ReadOnly = true;
             this.TextLogFile.Size = new System.Drawing.Size(176, 20);
@@ -70,7 +75,7 @@
             // 
             this.ButtonLogFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonLogFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonLogFile.Location = new System.Drawing.Point(292, 290);
+            this.ButtonLogFile.Location = new System.Drawing.Point(292, 370);
             this.ButtonLogFile.Name = "ButtonLogFile";
             this.ButtonLogFile.Size = new System.Drawing.Size(40, 25);
             this.ButtonLogFile.TabIndex = 13;
@@ -81,7 +86,7 @@
             // LabelLogFile
             // 
             this.LabelLogFile.AutoSize = true;
-            this.LabelLogFile.Location = new System.Drawing.Point(10, 295);
+            this.LabelLogFile.Location = new System.Drawing.Point(10, 375);
             this.LabelLogFile.Name = "LabelLogFile";
             this.LabelLogFile.Size = new System.Drawing.Size(77, 13);
             this.LabelLogFile.TabIndex = 11;
@@ -98,7 +103,7 @@
             "10 Minutes",
             "30 Minutes",
             "1 Hour"});
-            this.ComboCheckConnection.Location = new System.Drawing.Point(122, 329);
+            this.ComboCheckConnection.Location = new System.Drawing.Point(122, 409);
             this.ComboCheckConnection.Name = "ComboCheckConnection";
             this.ComboCheckConnection.Size = new System.Drawing.Size(82, 21);
             this.ComboCheckConnection.TabIndex = 15;
@@ -107,7 +112,7 @@
             // LabelCheckConnection
             // 
             this.LabelCheckConnection.AutoSize = true;
-            this.LabelCheckConnection.Location = new System.Drawing.Point(10, 332);
+            this.LabelCheckConnection.Location = new System.Drawing.Point(10, 412);
             this.LabelCheckConnection.Name = "LabelCheckConnection";
             this.LabelCheckConnection.Size = new System.Drawing.Size(102, 13);
             this.LabelCheckConnection.TabIndex = 14;
@@ -121,7 +126,7 @@
             this.GroupTimeFormat.Controls.Add(this.RadioEUFormat);
             this.GroupTimeFormat.Controls.Add(this.RadioISOFormat);
             this.GroupTimeFormat.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.GroupTimeFormat.Location = new System.Drawing.Point(12, 100);
+            this.GroupTimeFormat.Location = new System.Drawing.Point(12, 180);
             this.GroupTimeFormat.Name = "GroupTimeFormat";
             this.GroupTimeFormat.Size = new System.Drawing.Size(320, 96);
             this.GroupTimeFormat.TabIndex = 4;
@@ -168,7 +173,7 @@
             // 
             this.CheckAutoStart.AutoSize = true;
             this.CheckAutoStart.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CheckAutoStart.Location = new System.Drawing.Point(13, 368);
+            this.CheckAutoStart.Location = new System.Drawing.Point(13, 448);
             this.CheckAutoStart.Name = "CheckAutoStart";
             this.CheckAutoStart.Size = new System.Drawing.Size(143, 18);
             this.CheckAutoStart.TabIndex = 16;
@@ -179,7 +184,7 @@
             // 
             this.CheckMinimize.AutoSize = true;
             this.CheckMinimize.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.CheckMinimize.Location = new System.Drawing.Point(181, 368);
+            this.CheckMinimize.Location = new System.Drawing.Point(181, 448);
             this.CheckMinimize.Name = "CheckMinimize";
             this.CheckMinimize.Size = new System.Drawing.Size(139, 18);
             this.CheckMinimize.TabIndex = 17;
@@ -190,7 +195,7 @@
             // 
             this.ButtonOK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonOK.Location = new System.Drawing.Point(12, 407);
+            this.ButtonOK.Location = new System.Drawing.Point(12, 487);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(157, 26);
             this.ButtonOK.TabIndex = 18;
@@ -202,7 +207,7 @@
             // 
             this.ButtonOpenLog.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ButtonOpenLog.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonOpenLog.Location = new System.Drawing.Point(175, 407);
+            this.ButtonOpenLog.Location = new System.Drawing.Point(175, 487);
             this.ButtonOpenLog.Name = "ButtonOpenLog";
             this.ButtonOpenLog.Size = new System.Drawing.Size(157, 26);
             this.ButtonOpenLog.TabIndex = 19;
@@ -267,7 +272,7 @@
             this.GroupSpeedUnits.Controls.Add(this.RadioBytesPerSecond);
             this.GroupSpeedUnits.Controls.Add(this.RadioBitsPerSecond);
             this.GroupSpeedUnits.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.GroupSpeedUnits.Location = new System.Drawing.Point(12, 206);
+            this.GroupSpeedUnits.Location = new System.Drawing.Point(12, 286);
             this.GroupSpeedUnits.Name = "GroupSpeedUnits";
             this.GroupSpeedUnits.Size = new System.Drawing.Size(320, 74);
             this.GroupSpeedUnits.TabIndex = 8;
@@ -302,17 +307,68 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(214, 329);
+            this.label1.Location = new System.Drawing.Point(214, 409);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 26);
             this.label1.TabIndex = 20;
             this.label1.Text = "Need shorter intervalls?\r\nSee http://loggger.com\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // GroupAPIURL
+            // 
+            this.GroupAPIURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupAPIURL.Controls.Add(this.TextIPDetectURL);
+            this.GroupAPIURL.Controls.Add(this.RadioCustomIPDetect);
+            this.GroupAPIURL.Controls.Add(this.RadioAutoDetectIP);
+            this.GroupAPIURL.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.GroupAPIURL.Location = new System.Drawing.Point(12, 96);
+            this.GroupAPIURL.Name = "GroupAPIURL";
+            this.GroupAPIURL.Size = new System.Drawing.Size(320, 78);
+            this.GroupAPIURL.TabIndex = 4;
+            this.GroupAPIURL.TabStop = false;
+            this.GroupAPIURL.Text = "IP Detection URL";
+            // 
+            // TextIPDetectURL
+            // 
+            this.TextIPDetectURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextIPDetectURL.Enabled = false;
+            this.TextIPDetectURL.Location = new System.Drawing.Point(98, 43);
+            this.TextIPDetectURL.Name = "TextIPDetectURL";
+            this.TextIPDetectURL.Size = new System.Drawing.Size(210, 20);
+            this.TextIPDetectURL.TabIndex = 3;
+            // 
+            // RadioCustomIPDetect
+            // 
+            this.RadioCustomIPDetect.AutoSize = true;
+            this.RadioCustomIPDetect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.RadioCustomIPDetect.Location = new System.Drawing.Point(14, 44);
+            this.RadioCustomIPDetect.Name = "RadioCustomIPDetect";
+            this.RadioCustomIPDetect.Size = new System.Drawing.Size(69, 18);
+            this.RadioCustomIPDetect.TabIndex = 2;
+            this.RadioCustomIPDetect.TabStop = true;
+            this.RadioCustomIPDetect.Text = "Custom:";
+            this.RadioCustomIPDetect.UseVisualStyleBackColor = true;
+            // 
+            // RadioAutoDetectIP
+            // 
+            this.RadioAutoDetectIP.AutoSize = true;
+            this.RadioAutoDetectIP.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.RadioAutoDetectIP.Location = new System.Drawing.Point(14, 21);
+            this.RadioAutoDetectIP.Name = "RadioAutoDetectIP";
+            this.RadioAutoDetectIP.Size = new System.Drawing.Size(78, 18);
+            this.RadioAutoDetectIP.TabIndex = 1;
+            this.RadioAutoDetectIP.TabStop = true;
+            this.RadioAutoDetectIP.Text = "Automatic";
+            this.RadioAutoDetectIP.UseVisualStyleBackColor = true;
+            this.RadioAutoDetectIP.CheckedChanged += new System.EventHandler(this.RadioAutoDetectIP_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(344, 445);
+            this.ClientSize = new System.Drawing.Size(344, 529);
+            this.Controls.Add(this.GroupAPIURL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GroupSpeedUnits);
             this.Controls.Add(this.GroupDownloadURL);
@@ -328,9 +384,9 @@
             this.Controls.Add(this.LabelLogFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(860, 484);
+            this.MaximumSize = new System.Drawing.Size(860, 568);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(360, 484);
+            this.MinimumSize = new System.Drawing.Size(360, 568);
             this.Name = "FormSettings";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -342,6 +398,8 @@
             this.GroupDownloadURL.PerformLayout();
             this.GroupSpeedUnits.ResumeLayout(false);
             this.GroupSpeedUnits.PerformLayout();
+            this.GroupAPIURL.ResumeLayout(false);
+            this.GroupAPIURL.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,5 +428,9 @@
         private System.Windows.Forms.RadioButton RadioBytesPerSecond;
         private System.Windows.Forms.RadioButton RadioBitsPerSecond;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox GroupAPIURL;
+        private System.Windows.Forms.TextBox TextIPDetectURL;
+        private System.Windows.Forms.RadioButton RadioCustomIPDetect;
+        private System.Windows.Forms.RadioButton RadioAutoDetectIP;
     }
 }
