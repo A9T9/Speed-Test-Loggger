@@ -126,6 +126,7 @@ namespace SpeedTest
 
             // Initialize settings
             if (string.IsNullOrEmpty(Settings.Default.DownloadURL)) Settings.Default.DownloadURL = "http://loggger.com/bigfile.zip";
+            if (string.IsNullOrEmpty(Settings.Default.IPDetectURL)) Settings.Default.IPDetectURL = "http://icanhazip.com";
             if (string.IsNullOrEmpty(Settings.Default.LogFile)) Settings.Default.LogFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar + "SpeedTest" + Path.DirectorySeparatorChar + "SpeedTestLog.csv";
             if (Settings.Default.LogFile.ToLower().StartsWith(Application.StartupPath.ToLower())) Settings.Default.LogFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Path.DirectorySeparatorChar + "SpeedTest" + Path.DirectorySeparatorChar + "ConnectionLog.csv";
 
